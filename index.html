@@ -49,24 +49,12 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
   <h1 class="w3-margin w3-jumbo">TeXCreate From MKProjects</h1>
   <p class="w3-xlarge">Build LaTeX Projects Easy...er</p>
   <button class="w3-button w3-black w3-padding-large w3-large w3-margin-top"><a href="#get-started">Get Started</a></button>
-  <p class="w3-large">Version  <a href="">1.2.0</a></p>
+  <p class="w3-large">Version  <a href="http://crates.io/crates/texcreate">2.1</a></p>
 </header>
 
 <div class="w3-container w3-red" id="news">
   <div class="w3-center">
-    <h1></h1>
-    <h6>TexCreate Beta releases are rolling out, and yet the final release still feels 
-    so far away...and with betas, there's always the <em>"coming soon" </em> with many things. 
-    With that said, here are some things to be caution of:</h6> 
-
-    
-    <ul>
-      <li>TexCreate Web generates v2 <code>config.toml</code> files</li>
-      <li>Basic, Code and Novel Templates currently available</li> 
-      <li>Killed support to Multi mode in v2.0.0-beta.2</li> 
-      <li>Centralized Documentation between all libraries coming soon...</li>
-    </ul>
-
+    <h4>We are looking for contributors, if interested submit an issue in our GitHub</h4>
   </div>
 </div>
 
@@ -86,42 +74,51 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
   <div class="w3-panel w3-leftbar w3-black w3-code w3-text-green">
 <pre>
 $ texcreate init
-Would you like to use the default config.toml? (y/n):
-n
-Initializing custom config.toml...
-// Enter author name:
+Use default settings? (yes/no):
+no
+Enter Author:
 Author
-// Enter project title:
+Enter Title:
 Title
-// Enter date:
+Enter Date:
 Date
-// Enter project name:
+Enter Project Name:
 Project_Name
-//////////////////////////////////////
-// List of available templates:
-//////////////////////////////////////
-// Basic => A simple project with the basic setup you need
-// Book => A project that utilizes both a markdown and tex format
-// Math => A project that utilizes math related packages
-// Theatre => A project that is ideal to write scripts
-// Code => A project ideal to document about programming
-// Novel => A project to begin writing that novel you always delay
-// Beamer => A project to start making presentations in LaTeX
-// Lachaise => A project to write neat, nice documents/assignments
-// Enter template:
+=======================
+  Available Templates
+=======================
+==> Basic: Designed for simple documents
+==> Math: Designed for math focused documents
+==> Theatre: Designed to write plays/shows
+==> Code: Designed to write code using listings
+==> Novel: Designed to write well...novels
+==> Beamer: Designed to create presentations
+==> Lachaise: Designed for school assignments and academic papers
+=======================
+Enter Template:
 Basic
-// Enter paper size:
+Enter Paper Size:
 letterpaper
-// Enter font size:
-11
-// Enter document class:
+Enter Document Class:
 article
-
-$ cd Project_Name
-$ ls 
-Project_Name.tex structure.tex 
-# Project_Name contains all main source code for the project 
-# All packages are added into structure.tex
+Enter Font Size:
+11
+Default Project Structure? (y/n):
+y
+$ texcreate build 
+Checking for any errors...
+Loading template: Basic
+Creating project: Project_Name
+Writing Latex Template in Project_Name\src
+$ ls Project_Name
+out/ 
+src/
+README.md 
+texcreate.toml
+# All source code is placed inside src/ 
+$ cd Project_Name && texcreate compile # to compile project
+Successfully compiled src/Project_Name.tex to out/Project_Name.pdf
+# The output pdf will be placed inside out/
 </pre>
   </div>
 </div>
